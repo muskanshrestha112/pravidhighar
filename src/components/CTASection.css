@@ -1,0 +1,131 @@
+/* CTA Section */
+.cta-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px 30px;
+  background-color: #6b1d3f; /* Deep burgundy */
+  color: #fff;
+  gap: 20px;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+/* Left content (heading + subheading) */
+.cta-left {
+  flex: 1 1 55%;
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: all 1s ease;
+}
+
+/* Right content (button) */
+.cta-right {
+  flex: 1 1 35%;
+  display: flex;
+  justify-content: flex-end;
+  opacity: 0;
+  transform: translateX(100px);
+  transition: all 1s ease;
+  padding-right: 100px;
+
+}
+
+/* Animate on scroll */
+.cta-section.animate .cta-left {
+  opacity: 1;
+  transform: translateX(0);
+}
+.cta-section.animate .cta-right {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Gold bar before heading */
+.cta-heading-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+.gold-bar {
+  width: 6px;
+  height: 95px;
+  background-color: gold;
+  border-radius: 3px;
+  margin-top: 5px;
+}
+
+/* CTA Heading with two colors */
+#cta-heading {
+  font-size: 2.8rem;
+  line-height: 1.2;
+  margin: 0;
+  text-align: left;
+}
+#cta-heading .text-gold {
+  color: gold;
+}
+#cta-heading .text-white {
+  color: #ffffff;
+}
+
+/* Subheading */
+.cta-subheading {
+  font-size: 1.1rem;
+  color: #f9f9f9;
+  margin-top: 8px; /* smaller spacing */
+  text-align: left;
+  line-height: 1.5;
+}
+
+/* Button */
+.btn-cta {
+  background-color: gold;
+  color: #6b1d3f;
+  padding: 16px 36px;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+.btn-cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .cta-section {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+    padding: 60px 20px;
+  }
+
+  .cta-left, .cta-right {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+
+  .cta-section.animate .cta-left,
+  .cta-section.animate .cta-right {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .cta-right {
+    justify-content: center;
+  }
+
+  .cta-heading-wrapper {
+    justify-content: center;
+  }
+
+  #cta-heading {
+    font-size: 2.2rem;
+  }
+  .cta-subheading {
+    font-size: 1rem;
+  }
+}

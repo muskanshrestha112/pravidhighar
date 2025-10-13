@@ -1,0 +1,794 @@
+/* Global Styles */
+main {
+  font-family: 'Poppins', sans-serif;
+  background-color: #ffffff;
+  color: #555555;
+  line-height: 1.6;
+}
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  height: 70vh; /* Full viewport height */
+  width: 100%;
+  background: url("../assets/hero.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Lighter transparent black */
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2; /* Above overlay */
+  text-align: center;
+  color: #6b1d3f ;
+  padding: 20px 30px;
+  animation: fadeInUp 1s forwards;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.hero-content h1 .text-primary {
+  color: #ffffff; /* Gold accent */
+}
+
+.hero-content h1 .text-accent {
+  color: #ddb942; /* Gold accent */
+}
+
+
+.hero-content p {
+  font-size: 1.5rem;
+  margin-bottom: 25px;
+}
+
+.hero-content .cta-btn {
+  background-color: #ddb942;
+  color: #6b1d3f;
+  padding: 14px 40px;
+  font-size: 1.1rem;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.hero-content .cta-btn:hover {
+  background-color: #d4af37;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-section h1 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+.hero-section p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+.cta-btn {
+  background-color: #6b1d3f;
+  color: #ffffff;
+  padding: 12px 30px;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+.cta-btn:hover {
+  background-color: #852d53;
+  transform: translateY(-2px);
+}
+
+/* Story Section */
+
+.story-section {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch; /* Make children equal height */
+  justify-content: space-between;
+  gap: 50px;
+  padding: 100px 40px;
+  opacity: 0;
+  color: #ffffff;
+}
+
+.story-section.animate {
+  opacity: 1;
+}
+
+/* Text container */
+.story-text {
+  flex: 1 1 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Separate h2 and p animations */
+.story-heading {
+  transform: translateX(-100px);
+  opacity: 0;
+  transition: all 1s ease-out;
+}
+
+.story-paragraph {
+  transform: translateX(-120px);
+  opacity: 0;
+  transition: all 1.2s ease-out;
+}
+
+.story-section.animate .story-heading,
+.story-section.animate .story-paragraph {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.story-heading h2 {
+  font-size: 2.8rem;
+  color: #6b1d3f;
+  margin: 0;
+}
+
+.story-paragraph p {
+  font-size: 1.05rem;
+  color: #080808;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+/* Image container */
+.story-image {
+  flex: 1 1 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateX(100px);
+  opacity: 0;
+  transition: all 1s ease-out;
+}
+
+.story-section.animate .story-image {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.story-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* cover ensures image fills container */
+  border-radius: 15px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .story-section {
+    gap: 30px;
+    padding: 80px 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .story-section {
+    flex-direction: column;
+  }
+
+  .story-text,
+  .story-image {
+    flex: 1 1 100%;
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  .story-image img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+
+
+
+/* Services Section */
+.services-section {
+  text-align: center;
+  padding: 80px 20px;
+}
+.services-section h2 {
+  color: #6b1d3f;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+.services-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+.service-card {
+  background-color: #ffffff;
+  padding: 40px 20px;
+  border-radius: 12px;
+  width: 280px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 25px rgba(0,0,0,0.15);
+}
+.service-card .icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #d4af37;
+}
+.service-card h3 {
+  color: #6b1d3f;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.vision-card,
+.mission-card {
+  max-width: 450px;
+  padding: 30px 25px;
+  background-color: #6b1d3f;
+  color: #fff;
+  border-radius: 16px;
+  text-align: center;
+  position: relative;
+  text-align: justify;
+}
+
+.card-icon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: #ffd700; /* Gold accent for icons */
+   margin-bottom: 20px;
+  display: block;          /* make it block so margin auto works */
+  text-align: center;      /* center if inside inline container */
+  margin-left: auto;       /* horizontal center */
+  margin-right: auto;
+}
+
+.vertical-divider-line {
+  width: 2px;
+  background-color: #fff;
+  margin: 0 30px;
+  align-self: stretch;
+}
+
+/* Flex layout for side-by-side cards */
+.vision-mission-section {
+  display: flex;
+  justify-content: center;
+  align-items: stretch; /* stretch cards to equal height */
+  gap: 20px;
+  margin: 60px 0;
+  flex-wrap: wrap; /* allow stacking on smaller screens */
+}
+
+/* Cards */
+.vision-card,
+.mission-card {
+  flex: 1 1 45%; /* each takes almost half width */
+  background-color: #6b1d3f; /* deep burgundy */
+  border-radius: 16px;
+  padding: 40px 30px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  transform: translateX(0);
+  opacity: 0;
+  transition: all 1s ease;
+}
+
+/* Show animation */
+.vision-card.show,
+.mission-card.show {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* Headings & Text */
+.vision-card h3,
+.mission-card h3 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #fff;
+  text-align: center;
+}
+
+.vision-card p,
+.mission-card p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #f9f9f9;
+  margin: 0;
+  text-align: left;
+  flex-grow: 1; /* make text expand to fill card height equally */
+}
+
+/* Icons */
+.vision-card .icon,
+.mission-card .icon {
+  font-size: 3rem;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+/* Divider Line */
+.vertical-divider-line {
+  width: 2px;
+  background-color: #fff;
+  margin: 0 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .vision-mission-section {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .vertical-divider-line {
+    width: 80%;
+    height: 2px;
+    margin: 30px auto;
+  }
+
+  .vision-card,
+  .mission-card {
+    flex: 1 1 100%;
+  }
+}
+
+/* ===== Card Fill Animation from Bottom Right ===== */
+.vision-card,
+.mission-card {
+  position: relative; /* needed for pseudo-element */
+  overflow: hidden;   /* prevent overflow of the animated background */
+  z-index: 0;         /* make pseudo-element behind content */
+  background-color: #6b1d3f; /* initial background */
+  transition: color 0.4s ease;
+   /* text color transition */
+}
+
+/* Pseudo-element for animated background */
+.vision-card::before,
+.mission-card::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #852d53, #d4af37); /* animated fill colors */
+  transform: scale(0);
+  transform-origin: bottom right;
+  transition: transform 0.6s ease;
+  z-index: -1; /* behind text */
+  border-radius: 16px; /* same as card */
+}
+
+/* Hover Effect */
+.vision-card:hover::before,
+.mission-card:hover::before {
+  transform: scale(1);
+}
+
+/* Text color change on hover */
+.vision-card:hover h3,
+.mission-card:hover h3,
+.vision-card:hover p,
+.mission-card:hover p,
+.vision-card:hover .icon,
+.mission-card:hover .icon {
+  color: #ffffff;
+}
+
+
+/* Team Section */
+/* Team Section Container */
+.team-section {
+  background-color: #fff;
+  padding: 80px 40px;
+  text-align: center;
+}
+
+.team-section h2 {
+  font-size: 3rem;
+  color: #6b1d3f;
+  font-weight: 700;
+  margin-bottom: 50px;
+}
+
+/* Team Cards Wrapper */
+.team-cards {
+  display: flex;
+  gap: 30px;
+  overflow: hidden;
+  position: relative;
+}
+
+
+/* ===== Team Section ===== */
+.team-section {
+  padding: 80px 40px;
+  background-color: #f8f8f8;
+  overflow: hidden;
+  position: relative;
+}
+
+.team-section h2 {
+  font-size: 2.8rem;
+  text-align: center;
+  margin-bottom: 50px;
+  color: #333;
+}
+
+/* Wrapper for continuous sliding */
+.team-cards-wrapper {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+/* Duplicate wrapper to make infinite loop */
+.team-cards {
+  display: flex;
+  gap: 40px;
+  animation: slideTeam 30s linear infinite;
+}
+
+/* Individual Card */
+.team-section {
+  padding: 80px 40px;
+  background-color: #f8f8f8;
+  overflow: hidden;
+  position: relative;
+}
+
+.team-section h2 {
+  font-size: 2.8rem;
+  text-align: center;
+  margin-bottom: 50px;
+  color: #6b1d3f;
+}
+
+/* Outer wrapper for clipping overflow */
+.team-cards-wrapper {
+  overflow: hidden;
+  width: 100%;
+}
+
+/* Main sliding container */
+.team-cards {
+  display: flex;
+  gap: 50px;
+  animation: slideTeam 25s linear infinite;
+  width: max-content; /* Prevent shrinking, allow continuous flow */
+}
+
+/* Duplicate cards for seamless infinite loop */
+.team-cards::after {
+  content: "";
+  display: flex;
+  flex-shrink: 0;
+  width: 100%;
+}
+
+/* Individual team cards */
+.team-card {
+  background-color: #fff;
+  min-width: 250px;
+  max-width: 300px;
+  padding: 25px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px #6b1d3f(0, 0, 0, 0.15);
+}
+
+.team-card img {
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.team-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 5px;
+  color: #6b1d3f;
+}
+
+.team-card p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Continuous Sliding Animation */
+@keyframes slideTeam {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .team-cards {
+    gap: 30px;
+  }
+  .team-card {
+    min-width: 200px;
+    max-width: 240px;
+  }
+}
+
+@media (max-width: 768px) {
+  .team-cards {
+    animation: none; /* Stop sliding on mobile */
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .team-card {
+    margin-bottom: 20px;
+  }
+}
+
+
+
+/* CTA Section */
+.cta-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 80px 60px;
+  background-color: #6b1d3f; /* Deep burgundy */
+  color: #fff;
+  gap: 40px;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+/* Left content (heading + subheading) */
+.cta-left {
+  flex: 1 1 55%;
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: all 1s ease;
+}
+
+/* Right content (button) */
+.cta-right {
+  flex: 1 1 35%;
+  display: flex;
+  justify-content: flex-end;
+  opacity: 0;
+  transform: translateX(100px);
+  transition: all 1s ease;
+}
+
+/* Animate on scroll */
+.cta-section.animate .cta-left {
+  opacity: 1;
+  transform: translateX(0);
+}
+.cta-section.animate .cta-right {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Gold bar before heading */
+.cta-heading-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+.gold-bar {
+  width: 6px;
+  height: 80px;
+  background-color: gold;
+  border-radius: 3px;
+  margin-top: 5px;
+}
+
+/* CTA Heading with two colors */
+#cta-heading {
+  font-size: 2.8rem;
+  line-height: 1;
+  width: 100%;
+  margin: 0;
+  text-align: left;
+}
+#cta-heading .text-gold {
+  color: gold;
+}
+#cta-heading .text-white {
+  color: #ffffff;
+}
+
+/* Subheading */
+.cta-subheading {
+  font-size: 1.1rem;
+  color: #f9f9f9;
+  margin-top: 8px; /* smaller spacing */
+  text-align: left;
+  line-height: 1.5;
+}
+
+/* Button */
+.btn-cta {
+  background-color: gold;
+  color: #6b1d3f;
+  padding: 16px 26px;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+  font-size: 0.99rem;
+  
+}
+.btn-cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .cta-section {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+    padding: 60px 20px;
+  }
+
+  .cta-left, .cta-right {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+
+  .cta-section.animate .cta-left,
+  .cta-section.animate .cta-right {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .cta-right {
+    justify-content: center;
+  }
+
+  .cta-heading-wrapper {
+    justify-content: center;
+  }
+
+  #cta-heading {
+    font-size: 2.2rem;
+  }
+  .cta-subheading {
+    font-size: 1rem;
+  }
+}
+
+.why-choose-section {
+  background-color: #fff;
+  padding: 100px 40px;
+  text-align: center;
+}
+
+.why-choose-header {
+  margin-bottom: 60px;
+}
+
+.why-choose-header h2 {
+  font-size: 3rem;
+  color: #6b1d3f;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.why-choose-header p {
+  font-size: 1.1rem;
+  color: #333;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Grid Layout */
+.why-choose-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  justify-items: center;
+}
+
+/* Cards */
+.why-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 40px 25px;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+}
+
+.why-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 40px rgba(0, 0, 0, 0.15);
+}
+
+.why-icon {
+  font-size: 3rem;
+  color: #6b1d3f;
+  margin-bottom: 20px;
+}
+
+.why-card h3 {
+  font-size: 1.5rem;
+  color: #6b1d3f;
+  margin-bottom: 12px;
+}
+
+.why-card p {
+  color: #454444;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .why-choose-section {
+    padding: 60px 20px;
+  }
+
+  .why-choose-header h2 {
+    font-size: 2.2rem;
+  }
+
+  .why-card {
+    padding: 30px 20px;
+  }
+}
+

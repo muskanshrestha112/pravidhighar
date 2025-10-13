@@ -1,0 +1,195 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* About Section */
+.about-section {
+  background-color: #ffffff; /* White background */
+  padding: 80px 60px 40px; /* Reduced bottom padding */
+  color: #333333;
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.about-media {
+  flex: 1;
+  min-width: 300px;
+}
+
+.about-media img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  object-fit: cover;
+}
+
+.about-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.about-text h2 {
+  font-size: 2.2rem;
+  color: #6b1d3f; /* Deep Burgundy */
+  margin-bottom: 20px;
+}
+
+.about-text p {
+  font-size: 1rem;
+  color: #1f1e1e;
+  line-height: 1.8;
+  margin-bottom: 25px;
+  text-align: justify; /* Makes text fully aligned on both sides */
+}
+
+
+.btn-cta {
+  display: inline-block;
+  background-color: #6b1d3f;
+  color: #ffffff;
+  padding: 10px 15px;
+  border-radius: 25px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  margin-bottom: 35px;
+}
+
+.btn-cta:hover {
+  background-color: #f9cf47ff; /* Gold on hover */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(133,45,83,0.3);
+}
+
+/* Stats Section (Outside About) */
+.stats-section {
+  background-color: #ffffff;
+  padding: 40px 50px 60px; /* Reduced top padding */
+  overflow: hidden;
+}
+
+/* Container layout */
+.stats-container {
+  display: flex;
+  justify-content: space-between; /* Spread cards across container */
+  gap: 30px;
+  flex-wrap: wrap;
+  max-width: 1100px;  /* Wider container */
+  margin: 0 auto;     /* Center container */
+  opacity: 0;
+  transform: translateY(50px);
+  animation: slideUp 1.2s ease-out forwards;
+  animation-delay: 0.3s;
+}
+
+/* Each stat card */
+.stat {
+  flex: 0 0 330px;   /* Card width */
+  height: 180px;
+  background-color: #6b1d3f;
+  text-align: center;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeSlideUp 1s ease-out forwards;
+}
+
+/* Delay each card slightly for staggered entrance */
+.stat:nth-child(1) { animation-delay: 0.3s; }
+.stat:nth-child(2) { animation-delay: 0.6s; }
+.stat:nth-child(3) { animation-delay: 0.9s; }
+
+.stat:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+/* Icon / number */
+.stat span {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 20px; /* Space between icon and text */
+  color: #fdfafa;
+}
+
+/* Text below */
+.stat p {
+  padding: 10px 20px 20px;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #fdfafa;
+}
+
+/* Keyframes for animations */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media screen and (max-width: 1024px) {
+  .about-section {
+    padding: 60px 40px 30px;
+  }
+
+  .about-text h2 {
+    font-size: 2rem;
+  }
+
+  .about-text p {
+    font-size: 0.95rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-media,
+  .about-text {
+    width: 100%;
+  }
+
+  .stats-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+}
