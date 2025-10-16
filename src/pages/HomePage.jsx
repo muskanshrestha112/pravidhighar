@@ -2,15 +2,15 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import "./HomePage.css";
 
-
 // ===== Import All Section Components =====
-//import Navbar from "../components/Navbar";
 import HeroSection from "../components/HeroSection";
 import AboutSection from "../components/AboutSection";
 import ServicesSection from "../components/ServicesSection";
 import TestimonialsSection from "../components/TestimonialsSection";
 import CTASection from "../components/CTASection";
-//import Footer from "../components/Footer";
+
+// ===== Import Builder.io Editable Component =====
+//import MyComponent from "../components/MyComponent";
 
 function App() {
   return (
@@ -34,50 +34,41 @@ function App() {
       {/* ===== Main Website Wrapper ===== */}
       <div className="App">
 
-        {/* ===== 1. Header / Navbar ===== 
-        <header id="header">
-          <Navbar />
-        </header>*/}
-
-        {/* ===== 2. Hero Section =====*/}
+        {/* ===== 1. Hero Section =====*/}
         <section id="hero">
           <HeroSection />
         </section> 
 
-        {/* ===== 3. About Section ===== */}
+        {/* ===== 2. About Section ===== */}
         <section id="about">
           <AboutSection />
         </section>
 
-        {/* ===== 4. Services Section ===== */}
+        {/* ===== 3. Services Section ===== */}
         <section id="services">
           <ServicesSection />
         </section>
 
-        {/* ===== 5. Portfolio Section ===== 
-        <section id="portfolio">
-          <PortfolioSection />
-        </section>*/}
+        {/* ===== 4. Builder.io Editable Section ===== 
+        <section id="builder-component">
+          <MyComponent title="Hello from Builder" image="/image.png" />
+        </section> */}
 
-         {/* ===== 7. Call To Action Section ===== */}
+          {/* ===== 6. Call To Action Section ===== */}
         <section id="cta">
           <CTASection />
         </section>
 
-        {/* ===== 6. Testimonials Section ===== */}
+
+        {/* ===== 5. Testimonials Section ===== */}
         <section id="testimonials">
           <TestimonialsSection />
         </section>
 
-    
-
-        {/* ===== 8. Footer Section ===== 
-        <footer id="footer">
-          <Footer />
-        </footer>*/}
+      
       </div>
     </>
   );
 }
 
-export default App; 
+export default App;

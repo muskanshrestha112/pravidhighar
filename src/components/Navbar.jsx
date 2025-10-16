@@ -10,7 +10,7 @@ const Navbar = () => {
       {/* Logo */}
       <div className="navbar-logo">
         <NavLink to="/" aria-label="Pravidhi Ghar Home">
-          <img src="/logo.png" alt="Pravidhi Ghar Logo" />
+          <img src="/logo.png" alt="" />
           <span>Pravidhi Ghar</span>
         </NavLink>
       </div>

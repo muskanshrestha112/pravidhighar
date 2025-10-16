@@ -6,35 +6,32 @@ main {
   line-height: 1.6;
 }
 
-/* Hero Section */
-.hero-section {
-  position: relative;
-  height: 70vh; /* Full viewport height */
-  width: 100%;
-  background: url("../assets/hero.jpg") center/cover no-repeat;
+/* ===== Hero Section with Illustrations ===== */
+.hero-section-illustration {
   display: flex;
   align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-
-.hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Lighter transparent black */
-  z-index: 1;
-}
-
-.hero-content {
+  justify-content: space-between; /* pushes illustrations to edges */
+  padding: 60px 80px;
   position: relative;
-  z-index: 2; /* Above overlay */
+  background: linear-gradient(120deg, #fff7fa, #f7f0f3);
+  gap: 40px; /* space between illustrations and content */
+}
+
+/* Content */
+.hero-content {
+  position: relative; /* ensure content is above illustrations */
+  z-index: 1;
   text-align: center;
-  color: #6b1d3f ;
-  padding: 20px 30px;
-  animation: fadeInUp 1s forwards;
+  max-width: 700px;
+  margin-left: 320px !important; /* adjust content position */
+  color: #6b1d3f;
+  flex: 1 1 500px;
+  justify-content: center;
+
+  /* Animation */
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUp 1s ease-out forwards 0.3s;
 }
 
 .hero-content h1 {
@@ -42,38 +39,70 @@ main {
   margin-bottom: 20px;
 }
 
-.hero-content h1 .text-primary {
-  color: #ffffff; /* Gold accent */
-}
-
-.hero-content h1 .text-accent {
-  color: #ddb942; /* Gold accent */
-}
-
-
 .hero-content p {
-  font-size: 1.5rem;
-  margin-bottom: 25px;
+  font-size: 1.2rem;
+  color: #444;
+  margin-bottom: 30px;
 }
 
-.hero-content .cta-btn {
-  background-color: #ddb942;
-  color: #6b1d3f;
-  padding: 14px 40px;
-  font-size: 1.1rem;
-  border-radius: 30px;
+/* CTA Button */
+.cta-btn {
+  background-color: #6b1d3f;
+  color: #fff;
+  padding: 12px 30px;
+  border-radius: 25px;
   font-weight: 600;
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: background 0.3s ease, transform 0.3s ease;
 }
 
-.hero-content .cta-btn:hover {
-  background-color: #d4af37;
-  transform: translateY(-3px);
-  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+.cta-btn:hover {
+  background-color: #852d53;
+  transform: translateY(-2px);
 }
 
-/* Animation */
+/* Left Illustration */
+.hero-left-illustration {
+  position: absolute;
+  left: 150px;
+  bottom: 130px;
+  z-index: 0;
+  width: 300px;
+  max-width: 950px;
+  margin-bottom: 100px;
+
+  /* Animation */
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUp 1s ease-out forwards 0.5s;
+}
+
+/* Right Illustration */
+.hero-right-illustration {
+  position: absolute;
+  right: 0;
+  bottom: 150px;
+  z-index: 0;
+  width: 450px;
+  max-width: 550px;
+  margin-bottom: -150px;
+  margin-right: -50px;
+
+  /* Animation */
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUp 1s ease-out forwards 0.6s;
+}
+
+/* Images responsive */
+.hero-left-illustration img,
+.hero-right-illustration img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ===== Animations ===== */
 @keyframes fadeInUp {
   0% {
     opacity: 0;
@@ -85,26 +114,40 @@ main {
   }
 }
 
-.hero-section h1 {
-  font-size: 4rem;
-  margin-bottom: 1rem;
-}
-.hero-section p {
-  font-size: 1.5rem;
-  margin-bottom: 2rem;
-}
-.cta-btn {
-  background-color: #6b1d3f;
-  color: #ffffff;
-  padding: 12px 30px;
-  font-weight: 600;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: background 0.3s ease, transform 0.3s ease;
-}
-.cta-btn:hover {
-  background-color: #852d53;
-  transform: translateY(-2px);
+/* ===== Responsive ===== */
+@media (max-width: 1024px) {
+  .hero-section-illustration {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .hero-left-illustration,
+  .hero-right-illustration,
+  .hero-content {
+    max-width: 100%;
+    position: relative;
+    margin-left: 0 !important;
+  }
+
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .hero-left-illustration {
+    margin-bottom: 40px;
+    left: 0;
+    bottom: 0;
+  }
+
+  .hero-right-illustration {
+    margin-bottom: 40px;
+    right: 0;
+    bottom: 0;
+  }
 }
 
 /* Story Section */
@@ -415,6 +458,105 @@ main {
 .vision-card:hover .icon,
 .mission-card:hover .icon {
   color: #ffffff;
+}
+
+/* Why Choose Us Section */
+.why-choose-section {
+  background-color: #fff;
+  padding: 100px 40px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.why-choose-header h2 {
+  font-size: 3rem;
+  color: #6b1d3f;
+  font-weight: 700;
+  margin-bottom: 60px;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUp 0.8s forwards 0.2s;
+}
+
+/* Grid layout */
+.why-choose-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  justify-items: center;
+}
+
+/* Card styles */
+.why-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 40px 25px;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUp 0.8s forwards;
+}
+
+/* Add staggered animation delays using nth-child */
+.why-card:nth-child(1) { animation-delay: 0.2s; }
+.why-card:nth-child(2) { animation-delay: 0.4s; }
+.why-card:nth-child(3) { animation-delay: 0.6s; }
+.why-card:nth-child(4) { animation-delay: 0.8s; }
+.why-card:nth-child(5) { animation-delay: 1s; }
+.why-card:nth-child(6) { animation-delay: 1.2s; }
+
+/* Card hover effect */
+.why-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Icon */
+.why-icon {
+  font-size: 3rem;
+  color: #d4af37; /* Gold color */
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+/* Card headings */
+.why-card h3 {
+  font-size: 1.5rem;
+  color: #6b1d3f;
+  margin-bottom: 12px;
+}
+
+/* Card description */
+.why-card p {
+  color: #454444;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Fade in up animation */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .why-choose-section {
+    padding: 80px 20px;
+  }
+  .why-choose-header h2 {
+    font-size: 2.5rem;
+  }
+  .why-card {
+    padding: 30px 20px;
+  }
 }
 
 

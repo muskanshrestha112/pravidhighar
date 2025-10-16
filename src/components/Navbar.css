@@ -12,7 +12,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 14px 50px;
-  background-color: #6b1d3f;
+  background-color: #ffffff;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
   position: sticky;
   top: 0;
@@ -24,7 +24,7 @@
   display: flex;
   align-items: center;
   text-decoration: none;
-  color: #ffffff;
+  color: #6b1d3f;
   font-size: 1.6rem;
   font-weight: 600;
 }
@@ -52,7 +52,7 @@
 .nav-list li a,
 .nav-list li span {
   text-decoration: none;
-  color: #ffffff;
+  color: #6b1d3f;
   font-weight: 500;
   font-size: 0.95rem;
   padding-bottom: 3px;
@@ -75,7 +75,7 @@
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: #f9f4ef;
+  background-color: #ffffff;
   min-width: 200px;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
@@ -109,13 +109,13 @@
   background-color: #852d53;
   color: #ffffff;
   border-radius: 6px;
-  padding-left: 12px;
+  padding-left: 20pxpx;
 }
 
 /* CTA Button */
 .btn-highlight {
-  background-color: #e6bf42;
-  color: #852d53;
+  background-color: #6b1d3f;
+  color: #ffffff;
   padding: 8px 22px;
   border-radius: 25px;
   font-weight: 500;
@@ -127,7 +127,7 @@
 }
 
 .btn-highlight:hover {
-  background-color: #f6d159;
+  background-color: #852d53;
   transform: translateY(-1px);
   box-shadow: 0 3px 12px rgba(224, 123, 57, 0.3);
 }

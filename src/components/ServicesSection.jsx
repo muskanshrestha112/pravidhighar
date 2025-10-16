@@ -1,8 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import eventImg from "../assets/event.jpg";
-import webImg from "../assets/web.jpg";
-import marketingImg from "../assets/marketing.jpg";
 import "./ServicesSection.css";
 
 const services = [
@@ -12,24 +9,22 @@ const services = [
       "From corporate conferences to weddings — we handle planning, décor, and execution flawlessly.",
     includes: [
       "Event Planning",
-      "Décor & Theme Design",
+      "Decor & Theme Design",
       "Sound & Lighting",
       "Venue Management",
     ],
-    image: eventImg,
     link: "/services/event-management",
   },
   {
-    title: "Website Development",
+    title: "IT Services",
     description:
       "Build your brand online with a fast, secure, and stunning website.",
     includes: [
-      "Business Websites",
-      "E-commerce Platforms",
-      "UI/UX Design",
+      "Website Development",
+      "Software Development",
+      "IT Support Services",
       "Maintenance & Hosting",
     ],
-    image: webImg,
     link: "/services/it-services",
   },
   {
@@ -40,9 +35,8 @@ const services = [
       "SEO & Google Ads",
       "Social Media Marketing",
       "Branding & Content Creation",
-      "Email Campaigns",
+      "Photography/Videography",
     ],
-    image: marketingImg,
     link: "/services/digital-marketing",
   },
 ];
@@ -85,14 +79,11 @@ const ServicesSection = () => {
           <div
             className={`service-card ${
               visibleCards.includes(index) ? "visible" : ""
-            } ${index % 2 === 0 ? "slide-left" : "slide-right"}`}
+            }`}
             key={index}
             ref={(el) => (cardRefs.current[index] = el)}
             data-index={index}
           >
-            <div className="service-image">
-              <img src={service.image} alt={service.title} />
-            </div>
             <div className="service-content">
               <h3>{service.title}</h3>
               <p>{service.description}</p>
@@ -102,7 +93,6 @@ const ServicesSection = () => {
                 ))}
               </ul>
 
-              {/* ✅ Each button links to its unique route */}
               <Link to={service.link} className="cta-btn">
                 Explore More
               </Link>

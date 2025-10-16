@@ -47,7 +47,7 @@ const CTASection = () => {
         </div>
       </div>
       <div className="cta-right">
-        <a href="/contact" className="btn-cta" aria-label="Book a Free Consultation">
+        <a href="/contact" className="btn-ctasec" aria-label="Book a Free Consultation">
           Book a Free Consultation
         </a>
       </div>

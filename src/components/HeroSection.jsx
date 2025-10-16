@@ -1,65 +1,62 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import "./HeroSection.css";
-import heroImage from "../assets/hero-bg.jpg"; // adjust path
+import home from "../assets/undraw_quiet-street_v45k.svg"; 
+import creativeTeam from "../assets/undraw_mcp-server_7kvc.svg"; 
 
 const HeroSection = () => {
   return (
     <section className="hero" aria-labelledby="hero-heading">
-      {/* SEO Metadata */}
       <Helmet>
-        <title>Pravidhi Ghar | Creative Events, IT & Digital Marketing Nepal</title>
+        <title>Pravidhi Ghar | Events, Technology & Marketing</title>
         <meta
           name="description"
-          content="Pravidhi Ghar delivers exceptional event management, stunning websites, and digital marketing services in Nepal. We create experiences that inspire and bring your ideas to life."
+          content="Pravidhi Ghar unites events, technology, and digital marketing to craft inspiring experiences for brands and businesses in Nepal."
         />
         <meta
           name="keywords"
-          content="Pravidhi Ghar, Event Management Nepal, Website Design Nepal, Digital Marketing Nepal, Creative Agency, Corporate Events"
+          content="Event Management Nepal, Web Design Nepal, Digital Marketing, Creative Agency, Pravidhi Ghar"
         />
         <meta name="author" content="Pravidhi Ghar" />
-        <meta name="robots" content="index, follow" />
       </Helmet>
 
-      {/* Background Image */}
-      <div className="hero-bg">
-        <img
-          src={heroImage}
-          alt="Creative events, website development, and digital marketing by Pravidhi Ghar"
-          loading="lazy"
-        />
-      </div>
-
-      {/* Hero Content */}
-      <div className="hero-content">
+      <div className="hero-left">
         <h1 id="hero-heading">
-          Bringing Events, Technology, and Marketing Together to Build Experiences That Inspire.
+          Bringing Events, Tech & Marketing Together to Inspire Experiences.
         </h1>
         <p>
-          We help you host unforgettable events, design stunning websites, and grow your brand online with impactful strategies.
+          We host unforgettable events, craft beautiful websites, and grow your brand with innovative digital marketing strategies.
         </p>
-
-        {/* Button Group */}
         <div className="hero-buttons">
-          <a href="#services" className="btn btn-primary" aria-label="View Our Services">
+          <a href="#services" className="btn btn-primary">
             Our Services
           </a>
-          <a href="/contact" className="btn btn-secondary" aria-label="Contact Us">
+          <a href="/contact" className="btn btn-secondary">
             Contact Us
           </a>
         </div>
       </div>
 
-      {/* Structured Data for Hero Section */}
-      <script type="application/ld+json">
-        {JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "WebPage",
-          "name": "Pravidhi Ghar Hero Section",
-          "description": "Showcasing Pravidhi Ghar's creative events, web development, and digital marketing services.",
-          "image": "https://www.pravidhighar.com/assets/hero-bg.jpg" // replace with actual URL
-        })}
-      </script>
+      <div className="hero-right">
+        {/* Floating background optional */}
+        <div className="floating-bg"></div>
+
+        {/* Top creative illustration */}
+        <img
+          src={creativeTeam}
+          alt="Creative team collaborating"
+          className="hero-illustration top-illustration"
+          loading="lazy"
+        />
+
+        {/* Bottom home illustration */}
+        <img
+          src={home}
+          alt="Team working with technology and creativity"
+          className="hero-illustration bottom-illustration"
+          loading="lazy"
+        />
+      </div>
     </section>
   );
 };

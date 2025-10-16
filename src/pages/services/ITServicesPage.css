@@ -1,6 +1,6 @@
 :root {
   --primary: #6b1d3f;
-  --accent: #d4af37;
+  --accent: #ffffff;
   --secondary: #a0b0c0;
   --bg-light: #fff7f0;
   --bg-white: #ffffff;
@@ -10,27 +10,92 @@
 }
 
 /* Hero */
+/* ===== Hero Section ===== */
 .hero-section {
-  background-size: cover;
-  background-position: center;
-  padding: 120px 20px;
-  color: var(--bg-white);
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 0px;
+  background-color: #f7f0f3;
   position: relative;
+  flex-wrap: wrap;
+  overflow: hidden;
 }
-.hero-overlay {
-  background: rgba(0,0,0,0.4);
-  padding: 60px 20px;
+
+/* ===== Hero Content ===== */
+.hero-content {
+  flex: 1 1 500px;
+  z-index: 2;
+  max-width: 600px;
+  margin-left: 20px;
+  margin-bottom: 0px;
+
+  /* Animation */
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeUp 1s ease forwards 0.3s;
 }
-.hero-section h1 {
+
+.hero-content h1 {
   font-size: 3rem;
+  color: #6b1d3f;
+  margin-bottom: 20px;
+  justify-content: left;
 }
-.hero-section .highlight {
-  color: var(--accent);
+
+.hero-content .highlight {
+  color: #6b1d3f !important;
 }
-.hero-section p {
-  margin-top: 15px;
+
+.hero-content p {
   font-size: 1.2rem;
+  color: #444;
+}
+
+/* ===== Hero Illustration ===== */
+.hero-illustration {
+  flex: 1 1 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  margin-left: -650px; /* overlap effect */
+}
+
+.hero-illustration img {
+  width: 0px;
+  max-width: 50%;
+  height: auto;
+  transform: translateX(50px);
+  opacity: 0;
+  animation: fadeIn 1s forwards 0.5s;
+  margin-top: -350px;
+  margin-left: -800px;
+  margin-top: -220px;
+}
+
+/* ===== Animations ===== */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 /* Services Section */
@@ -74,10 +139,10 @@
   transition-delay: 0.2s;
 }
 .service-card:nth-child(2).visible {
-  transition-delay: 0.4s;
+  transition-delay: 0.2s;
 }
 .service-card:nth-child(3).visible {
-  transition-delay: 0.6s;
+  transition-delay: 0.2s;
 }
 
 .service-card .service-image img {
@@ -97,85 +162,155 @@
 .service-card .service-content ul {
   list-style: none;
   padding-left: 0;
+  justify-content: left;
 }
 .service-card .service-content ul li {
   margin-bottom: 10px;
   color: var(--text-secondary);
   font-size: 1.05rem;
+  justify-content: left;
 }
 .service-card .service-content ul li::before {
   content: "➤ ";
-  color: var(--accent);
+  color: #6b1d3f;
   font-weight: bold;
   display: inline-block;
-  width: 20px;
+
 }
 
 
 /* CTA Section */
 .cta-section {
-  background: #d4af37; /* Gold background */
-  padding: 80px 20px;
-  text-align: center;
-  color: #ffffff;
-  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 80px 60px;
+  background-color: #6b1d3f; /* Deep burgundy */
+  color: #fff;
+  gap: 40px;
+  flex-wrap: wrap;
   overflow: hidden;
 }
 
-.cta-content {
-  max-width: 800px;
-  margin: 0 auto;
-  animation: fadeInUp 1s ease forwards;
+/* Left content (heading + subheading) */
+.cta-left {
+  flex: 1 1 55%;
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: all 1s ease;
 }
 
-.cta-section h2 {
-  font-size: 2.4rem;
-  margin-bottom: 15px;
+/* Right content (button) */
+.cta-right {
+  flex: 1 1 35%;
+  display: flex;
+  justify-content: flex-end;
+  opacity: 0;
+  transform: translateX(100px);
+  transition: all 1s ease;
+}
+
+/* Animate on scroll */
+.cta-section.animate .cta-left {
+  opacity: 1;
+  transform: translateX(0);
+}
+.cta-section.animate .cta-right {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Gold bar before heading */
+.cta-heading-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+.gold-bar {
+  width: 6px;
+  height: 80px;
+  background-color: gold;
+  border-radius: 3px;
+  margin-top: 5px;
+}
+
+/* CTA Heading with two colors */
+#cta-heading {
+  font-size: 2.8rem;
+  line-height: 1;
+  width: 100%;
+  margin: 0;
+  text-align: left;
+}
+#cta-heading .text-gold {
+  color: gold;
+}
+#cta-heading .text-white {
   color: #ffffff;
 }
 
-.cta-section p {
+/* Subheading */
+.cta-subheading {
   font-size: 1.1rem;
   color: #f9f9f9;
-  margin-bottom: 30px;
-  line-height: 1.6;
+  margin-top: 8px; /* smaller spacing */
+  text-align: left;
+  line-height: 1.5;
 }
 
-
-/* CTA Button */
-.cta-btn {
-  background: #d4af37; /* Gold background */
-  color: #ffffff; /* White text */
-  padding: 14px 40px;
-  border-radius: 8px;
+/* Button */
+.btn-cta {
+  background-color: gold ;
+  color: #6b1d3f;
+  padding: 16px 26px;
+  border-radius: 30px;
   font-weight: 600;
   text-decoration: none;
-  font-size: 1.1rem;
   transition: all 0.3s ease;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   display: inline-block;
+  font-size: 0.99rem;
+  
 }
-
-.cta-btn:hover {
-  background: #ffffff; /* White background on hover */
-  color: #d4af37; /* Gold text on hover */
+.btn-cta:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
+/* Responsive */
+@media (max-width: 1024px) {
+  .cta-section {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+    padding: 60px 20px;
+  }
 
-/* Fade-up animation */
-@keyframes fadeInUp {
-  0% {
+  .cta-left, .cta-right {
+    transform: translateY(50px);
     opacity: 0;
-    transform: translateY(30px);
   }
-  100% {
-    opacity: 1;
+
+  .cta-section.animate .cta-left,
+  .cta-section.animate .cta-right {
     transform: translateY(0);
+    opacity: 1;
+  }
+
+  .cta-right {
+    justify-content: center;
+  }
+
+  .cta-heading-wrapper {
+    justify-content: center;
+  }
+
+  #cta-heading {
+    font-size: 2.2rem;
+  }
+  .cta-subheading {
+    font-size: 1rem;
   }
 }
-
 
 /* Why Choose Us */
 .why-choose-us {
@@ -185,6 +320,7 @@
   text-align: center;
 }
 .why-choose-us h2 {
+   font-size: 40px;
   margin-bottom: 30px;
   color: var(--primary);
 }

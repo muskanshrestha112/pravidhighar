@@ -28,9 +28,14 @@ body {
   justify-content: center;
 }
 
+
 .blog-hero-overlay {
+  position: absolute;  /* fill the parent */
+  height: 100%;       /* same height as parent */
+  width: 100%;
+
   background: rgba(0, 0, 0, 0.5);
-  padding: 40px 30px;
+  height: 60vh;
   border-radius: 0px;
   text-align: center;
   animation: fadeIn 1.5s ease forwards;
@@ -39,7 +44,7 @@ body {
 .hero-title {
   font-size: 2.8rem;
   font-weight: bold;
-  margin-bottom: 9px;
+  padding-top: 190px;
   color:#ffffff
 }
 
@@ -49,14 +54,14 @@ body {
 
 .hero-subtitle {
   font-size: 1.2rem;
-  color: var(--text-secondary);
+  color: #ffffff !important;
 }
 
 /* Blog Content */
 .blog-content {
   max-width: 900px;
   margin: 50px auto;
-  padding: 0 20px;
+  padding: 50px 20px;
   background-color: var(--background-color);
   border-radius: 10px;
   animation: fadeInUp 1s ease forwards;
@@ -64,7 +69,7 @@ body {
 
 .blog-content h2 {
   color: var(--primary-color);
-  margin-top: 40px;
+  margin-top: 0px;
   font-size: 2.5 rem;
   border-bottom: 2px solid var(--accent-color);
   padding-bottom: 6px;

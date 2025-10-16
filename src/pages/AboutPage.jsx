@@ -4,13 +4,16 @@ import "./AboutUs.css";
 
 // Images
 import storyImg from "../assets/story.jpg";
-import heroImg from "../assets/hero.jpg";
 import geetaImg from "../assets/geeta.jpg";
 import prabinImg from "../assets/prabin.jpg";
 import rabinImg from "../assets/rabin.jpg";
 import dipeshImg from "../assets/dipesh.jpg";
 import sangamImg from "../assets/sangam.jpg";
 import muskanImg from "../assets/muskan.jpg";
+// Illustrations for Hero Section
+import heroLeftIllustration from "../assets/undraw_app-benchmarks_ls0m.svg";
+import heroRightIllustration from "../assets/undraw_shared-workspace_6y9d.svg";
+
 
 // Icons
 import {
@@ -102,18 +105,28 @@ const AboutUs = () => {
 
   return (
     <main>
-      {/* Hero Section */}
-      <section className="hero-section" style={{ backgroundImage: `url(${heroImg})` }}>
-        <div className="hero-overlay"></div>
-        <div className="hero-content">
-          <h1>
-            <span className="text-primary">Pravidhi</span>{" "}
-            <span className="text-accent">Ghar</span>
-          </h1>
-          <p>Empowering ideas through technology, creativity, and strategy.</p>
-          <a href="#service" className="cta-btn">Learn More</a>
-        </div>
-      </section>
+    {/* Hero Section with illustrations */}
+{/* Hero Section with Illustrations */}
+<section className="hero-section-illustration">
+  <div className="hero-left-illustration">
+    <img src={heroLeftIllustration} alt="Creative Illustration Left" />
+  </div>
+
+  <div className="hero-content">
+    <h1>
+      <span className="text-primary">Pravidhi</span>{" "}
+      <span className="text-accent">Ghar</span>
+    </h1>
+    <p>Empowering ideas through technology, creativity, and strategy.</p>
+    <a href="#services" className="cta-btn">Learn More</a>
+  </div>
+
+  <div className="hero-right-illustration">
+    <img src={heroRightIllustration} alt="Creative Illustration Right" />
+  </div>
+</section>
+
+
 
       {/* Story Section */}
       <section className={`story-section ${storyVisible ? "animate" : ""}`} ref={storyRef}>
@@ -135,8 +148,9 @@ const AboutUs = () => {
         </div>
       </section>
 
-      {/* Services Section */}
-      <ServicesSection />
+      <section id="services">
+                <ServicesSection />
+              </section>
 
       {/* Vision & Mission Section */}
       <section className="vision-mission-section" ref={visionMissionRef}>

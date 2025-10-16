@@ -1,68 +1,79 @@
+
 /* ===== Hero Section ===== */
 .blog-hero {
-  width: 100%;
-  height: 60vh; /* or 100vh if you want full screen */
-  background-size: cover;
-  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* align content and illustration */
+  padding: 80px 60px;
+  background-color: #f7f0f3;
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0; /* remove any gap */
-  padding: 0; /* remove any padding */
-  margin-bottom: 60px;
+  flex-wrap: wrap;
 }
 
-.blog-hero-overlay {
-  position: absolute; /* cover the hero completely */
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* overlay color */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: rgba(0, 0, 0, 0.5);
-  margin: 0;
-  padding: 0;
-}
+.blog-hero-content {
+  flex: 1 1 500px;
+  text-align: left;
+  z-index: 2;
+  position: relative;
 
-
-.blog-hero h1 {
-  font-size: 3rem;
-  margin-bottom: 15px;
-  padding-top: 10px;
-}
-
-.blog-hero p {
-  font-size: 1.3rem;
-  color: #ffffff;
-}
-
-.blog-hero-overlay h1 {
-  font-size: 3rem;
-  font-weight: 700;
-  text-align: center;
-  line-height: 1.2;
-}
-
-.blog-hero-overlay h1 .text-primary {
-  color: #ffffff; 
-}
-
-.blog-hero-overlay h1 .text-accent {
-  color: #d4af37; /* gold accent */
-}
-
-/* Initial state: slightly below and invisible */
-.blog-hero-overlay h1,
-.blog-hero-overlay p {
+  /* Animation */
   opacity: 0;
-  transform: translateY(30px);
-  animation-fill-mode: forwards; /* keep final state after animation */
+  transform: translateY(50px); /* start below */
+  animation: slideUpHero 1s ease-out forwards 0.2s; /* slight delay */
+}
+.blog-hero-content h1 {
+  font-size: 3rem;
+  color: #6b1d3f;
+  margin-bottom: 20px;
+  margin-left: 40px; /* spacing from left */
+}
+
+.blog-hero-content p {
+  font-size: 1.2rem;
+  color: #444 !important;
+  margin-left: 40px; /* match h1 left spacing */
+}
+
+.blog-hero-illustration {
+  position: absolute; /* allow overlapping */
+  right: 0; /* stick to right */
+  bottom: 0; /* align with bottom of hero */
+  z-index: 1; /* behind content */
+}
+
+/* ===== Illustration Animation ===== */
+.blog-hero-illustration img {
+  margin-left: 150px;
+  width: 550px;
+  max-width: 60%;
+  height: auto;
+  
+  /* Animation */
+  opacity: 0;
+  transform: translateY(50px); /* start below */
+  animation: slideUpIllustration 1s ease-out forwards 0.5s; /* delay for stagger effect */
+}
+
+@keyframes slideUpHero {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Keyframes for illustration */
+@keyframes slideUpIllustration {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Slide up animation */
@@ -154,14 +165,14 @@
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  transition: transform 0.3s ease;
+  transition: transform 0.2s ease;
   padding-left: 15px;
   padding-bottom: 3px;
 
 }
 
 .blog-card .read-more span {
-  transition: transform 0.3s ease;
+  transition: transform 0.2s ease;
 }
 
 .blog-card:hover .read-more span {

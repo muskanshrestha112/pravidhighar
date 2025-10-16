@@ -4,7 +4,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 50px 30px;
-  background-color: #6b1d3f; /* Deep burgundy */
+  background-color: #6b1d3f !important; /* Deep burgundy */
   color: #fff;
   gap: 20px;
   flex-wrap: wrap;
@@ -79,19 +79,26 @@
 }
 
 /* Button */
-.btn-cta {
-  background-color: gold;
-  color: #6b1d3f;
+/* CTA Button */
+.btn-ctasec {
+  background-color: gold;      /* Gold background */
+  color: #6b1d3f;              /* Burgundy text */
   padding: 16px 36px;
   border-radius: 30px;
   font-weight: 600;
   text-decoration: none;
   transition: all 0.3s ease;
   display: inline-block;
+  cursor: pointer;
+  border: none;
+  margin-right: -100px;
 }
-.btn-cta:hover {
+
+.btn-ctasec:hover {
+  background-color: #f9d14c;   /* Slightly brighter gold on hover */
   transform: translateY(-3px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  color: #6b1d3f;             /* Keep text burgundy */
 }
 
 /* Responsive */

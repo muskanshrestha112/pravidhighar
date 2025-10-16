@@ -1,7 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import "./EventMemorable.css";
-import heroImg from "../../assets/corporate-event-hero.jpg"; 
+import heroImg from "../../assets/corporate-event-hero.jpg";
 import { Link } from "react-router-dom";
 
 // Topic Images
@@ -18,13 +18,18 @@ const EventMemorable = () => {
         <title>How to Make Corporate Events Memorable | Pravidhi Ghar</title>
         <meta
           name="description"
-          content="Learn how to plan and host unforgettable corporate events with creative engagement, strong branding, and seamless coordination."
+          content="Discover how to plan and host memorable corporate events with engaging activities, strong branding, and seamless organization. Elevate your brand through unforgettable experiences."
         />
         <meta
           name="keywords"
-          content="Corporate Events, Event Planning, Employee Engagement, Branding, Event Management, Pravidhi Ghar"
+          content="Corporate Events, Event Planning, Brand Engagement, Event Management, Business Networking, Corporate Branding, Event Strategy, Pravidhi Ghar"
         />
+        <meta name="author" content="Pravidhi Ghar" />
         <meta name="robots" content="index, follow" />
+        <link
+          rel="canonical"
+          href="https://www.pravidhighar.com/blog/how-to-make-corporate-events-memorable"
+        />
       </Helmet>
 
       {/* Hero Section */}
@@ -37,91 +42,119 @@ const EventMemorable = () => {
             How to Make <span className="highlight">Corporate Events</span> Memorable
           </h1>
           <p className="hero-subtitle">
-            Transform ordinary gatherings into unforgettable experiences through creativity and strategy.
+            Transform ordinary corporate gatherings into unforgettable brand experiences.
           </p>
         </div>
       </section>
 
       {/* Blog Content */}
-      <section className="blog-content">
+      <section className="blog-content" role="main">
         <h2>Introduction</h2>
         <p>
-          A memorable corporate event strengthens brand identity, inspires employees, and leaves a lasting impression on attendees. By combining thoughtful planning, creative engagement, and effective storytelling, businesses can turn corporate events into powerful networking and brand-building opportunities.
+          A well-planned corporate event is more than a gathering — it’s a strategic opportunity
+          to reinforce your brand identity, inspire teams, and leave a lasting impression on
+          clients and partners. Through creativity, engagement, and storytelling, you can turn
+          each event into a powerful business tool that connects people and strengthens relationships.
         </p>
 
         {/* Event Planning Section */}
         <div className="content-row">
-          <img src={planningImg} alt="Event Planning" className="blog-img-left" />
+          <img src={planningImg} alt="Strategic Event Planning" className="blog-img-left" />
           <div className="content-text">
             <h2>Strategic Event Planning</h2>
             <p>
-              Every successful event starts with clear goals and a well-structured plan. Understanding your audience and defining measurable objectives set the foundation for a seamless experience.
+              Every impactful event begins with a solid foundation. Effective planning ensures
+              that every detail aligns with your goals, audience expectations, and brand message.
             </p>
             <ul>
-              <li>Set clear objectives and target outcomes.</li>
-              <li>Choose the right venue and theme to match your brand.</li>
-              <li>Coordinate logistics, schedules, and vendor communication efficiently.</li>
-              <li>Incorporate sustainability and inclusivity in event design.</li>
+              <li>Define clear event objectives and desired outcomes.</li>
+              <li>Choose a venue and theme that align with your company’s vision.</li>
+              <li>Coordinate logistics, schedules, and communication seamlessly.</li>
+              <li>Incorporate sustainability and accessibility in your planning.</li>
             </ul>
           </div>
         </div>
 
         {/* Engagement Section */}
         <div className="content-row">
-          <img src={engagementImg} alt="Audience Engagement" className="blog-img-left" />
+          <img src={engagementImg} alt="Corporate Event Audience Engagement" className="blog-img-left" />
           <div className="content-text">
             <h2>Interactive Audience Engagement</h2>
             <p>
-              Engaging your audience transforms attendees into active participants. Incorporate creative activities and interactive experiences that spark connections and lasting memories.
+              Engagement is key to making your event memorable. Turning attendees into active
+              participants enhances connection, excitement, and long-term recall.
             </p>
             <ul>
-              <li>Include games, live polls, or interactive Q&A sessions.</li>
-              <li>Encourage networking and collaborative experiences.</li>
-              <li>Use storytelling and visuals to build emotional connection.</li>
+              <li>Use live polls, Q&A sessions, and interactive games.</li>
+              <li>Encourage networking with collaborative activities.</li>
+              <li>Incorporate storytelling, visuals, and audience participation.</li>
             </ul>
           </div>
         </div>
 
         {/* Branding Section */}
         <div className="content-row">
-          <img src={brandingImg} alt="Event Branding" className="blog-img-left" />
+          <img src={brandingImg} alt="Event Branding and Visual Identity" className="blog-img-left" />
           <div className="content-text">
-            <h2>Strong Branding and Visual Impact</h2>
+            <h2>Strong Branding and Visual Identity</h2>
             <p>
-              Memorable events reflect the company’s identity and message. Strategic branding helps reinforce trust, recognition, and emotional connection among guests.
+              Great branding makes your event instantly recognizable and emotionally engaging.
+              A cohesive look and message across all touchpoints strengthens brand recall.
             </p>
             <ul>
-              <li>Design cohesive branding across decor, visuals, and materials.</li>
-              <li>Highlight brand story through displays, videos, and keynote moments.</li>
-              <li>Offer branded giveaways or digital souvenirs.</li>
+              <li>Maintain consistent branding in decor, visuals, and communication.</li>
+              <li>Share your brand story through keynote sessions and multimedia.</li>
+              <li>Provide branded keepsakes or digital highlights for attendees.</li>
             </ul>
           </div>
         </div>
 
-    
+        {/* Technology Integration */}
+        <div className="content-row">
+          <img src={techImg} alt="Event Technology Integration" className="blog-img-left" />
+          <div className="content-text">
+            <h2>Leveraging Event Technology</h2>
+            <p>
+              Integrating smart technology simplifies management and enhances the guest experience.
+              From virtual tools to real-time analytics, technology helps events run smoother.
+            </p>
+            <ul>
+              <li>Use digital check-ins and event management software.</li>
+              <li>Incorporate AR/VR elements or live streaming for hybrid participation.</li>
+              <li>Track engagement through analytics dashboards.</li>
+            </ul>
+          </div>
+        </div>
+
         {/* Feedback Section */}
         <div className="content-row">
-          <img src={feedbackImg} alt="Event Feedback" className="blog-img-left" />
+          <img src={feedbackImg} alt="Post Event Feedback and Analysis" className="blog-img-left" />
           <div className="content-text">
             <h2>Post-Event Feedback and Follow-Up</h2>
             <p>
-              Gathering feedback ensures continuous improvement and maintains relationships beyond the event.
+              A great event doesn’t end when the lights go out. Gathering feedback and sharing
+              post-event insights helps sustain engagement and improve future experiences.
             </p>
             <ul>
-              <li>Send post-event surveys to measure satisfaction.</li>
-              <li>Share event highlights and thank participants personally.</li>
-              <li>Use feedback to plan better future events.</li>
+              <li>Send surveys or feedback forms shortly after the event.</li>
+              <li>Share event highlights, photos, and appreciation messages.</li>
+              <li>Analyze insights to refine upcoming events.</li>
             </ul>
           </div>
         </div>
 
         <h2>Conclusion</h2>
         <p>
-          Memorable corporate events blend creativity, planning, and brand authenticity. By focusing on audience engagement, visual impact, and follow-up, your organization can host events that not only impress but also build lasting professional relationships.
+          Making corporate events memorable requires the right mix of creativity, planning, and
+          authenticity. By focusing on strategic design, engagement, technology, and branding,
+          your organization can create impactful experiences that foster meaningful relationships
+          and lasting impressions.
         </p>
 
         <Link to="/contact">
-          <button className="cta-button">Plan Your Next Event</button>
+          <button className="cta-button" aria-label="Plan Your Next Event with Pravidhi Ghar">
+            Plan Your Next Event
+          </button>
         </Link>
       </section>
     </div>

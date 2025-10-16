@@ -1,10 +1,13 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet";
-import heroImg from "../assets/blog-hero.jpg"; // make sure the image exists in assets
+
 import "./BlogPage.css";
 
-// Import images from assets
+// Illustrations
+import heroIllustration from "../assets/undraw_problem-solving_1kpx.svg";
+
+// Blog images
 import blog1 from "../assets/blog-digital-marketing.jpg";
 import blog2 from "../assets/blog-event-management.jpg";
 import blog3 from "../assets/blog-web-development.jpg";
@@ -35,34 +38,35 @@ const BlogPage = () => {
         <title>Blog | Pravidhi Ghar</title>
         <meta
           name="description"
-          content="Explore the latest insights on IT, Event Management, and Digital Marketing from Pravidhi Ghar."
+          content="Explore the latest insights on IT, Event Management, and Digital Marketing from Pravidhi Ghar. Stay updated with professional tips and strategies to grow your business online."
         />
         <meta
           name="keywords"
-          content="IT, Web Development, Event Management, Digital Marketing, SEO, Blog, Pravidhi Ghar"
+          content="IT, Web Development, Event Management, Digital Marketing, SEO, Blog, Pravidhi Ghar, Technology Insights, Business Growth"
         />
+        <meta name="robots" content="index, follow" />
       </Helmet>
 
-     {/* Hero Section */}
-       <section 
-        className="blog-hero"
-        style={{ backgroundImage: `url(${heroImg})` }}
-        >
-        <div className="blog-hero-overlay">
-            <h1>
+      {/* Hero Section */}
+      <section className="blog-hero">
+        <div className="blog-hero-content">
+          <h1>
             <span className="text-primary">Our</span>{" "}
             <span className="text-accent">Blog</span>
-            </h1>
-            <p>Insights & tips on IT, Events, and Digital Marketing to grow your business</p>
+          </h1>
+          <p className="hero-subtitle">
+            Insights & professional tips on IT, Events, and Digital Marketing to grow your business.
+          </p>
         </div>
-        </section>
+        <div className="blog-hero-illustration">
+          <img src={heroIllustration} alt="Professional blog illustration" />
+        </div>
+      </section>
 
-
-
-      {/* Blog Cards */}
+      {/* Blog Cards Section */}
       <section className="blog-cards-section">
         {blogPosts.map((post, index) => (
-          <motion.div
+          <motion.article
             key={post.id}
             className="blog-card"
             initial={{ opacity: 0, y: 40 }}
@@ -73,11 +77,11 @@ const BlogPage = () => {
             <div className="card-img-wrapper">
               <img src={post.img} alt={post.title} />
             </div>
-            <h3>{post.title}</h3>
-            <a href={post.link} className="read-more">
+            <h3 className="card-title">{post.title}</h3>
+            <a href={post.link} className="read-more" aria-label={`Read full blog: ${post.title}`}>
               Read More <span>→</span>
             </a>
-          </motion.div>
+          </motion.article>
         ))}
       </section>
     </>
